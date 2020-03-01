@@ -1,8 +1,8 @@
 FROM openjdk:8-alpine
-RUN apk add --update --no-cache git
+RUN apk add --update --no-cache git bash
 
 WORKDIR app
 
-RUN git clone https://github.com/JPautz/vanilla.git
+COPY src/ ./
 
 ENTRYPOINT ./start.sh
